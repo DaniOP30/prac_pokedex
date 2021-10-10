@@ -3,5 +3,5 @@ module.exports = {
     'vuetify'
   ],
 
-  publicPath: '/prac_pokedex/'
+  publicPath: '/'
 }
