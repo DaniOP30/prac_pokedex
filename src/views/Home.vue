@@ -22,36 +22,46 @@
     <v-divider></v-divider>
 
     <div class="container">
-      <v-row class="f-w">
-        <div v-for="(data, index) in pokemons" :key="index">
-          <v-col >
-            <v-card class="carta">
-              <v-img
-                class="pointer"
-                :src="data.img"
-                
-              ></v-img>
-              
-                <v-card-title class="justify-center">
+      
+        
+          
+            <v-row >
+              <div v-for="(data, index) in pokemons" :key="index">
+                <v-col >
+                  <v-card class="carta">
+                    <router-link :to="{name: 'Info_pokemon', params: {id:data.id}}">
+                      <v-img
+                        class="pointer"
+                        :src="data.img"
+                        
+                      ></v-img>
+                    </router-link>
+                    
+                    
+                      <v-card-title class="justify-center">
 
-                  {{data.name}}
-                  
-                </v-card-title>
-                  
-                <v-card-subtitle>
-                  #{{data.id}}
-                </v-card-subtitle>
+                        {{data.name}}
+                        
+                      </v-card-title>
+                        
+                      <v-card-subtitle>
+                        #{{data.id}}
+                      </v-card-subtitle>
 
-                <v-card-actions>
-                  <v-btn>
-                    {{data.type}}
-                  </v-btn>
-                </v-card-actions>
+                      <v-card-actions>
+                        <v-btn>
+                          {{data.type}}
+                        </v-btn>
+                      </v-card-actions>
 
-            </v-card>
-          </v-col>
-        </div>
-      </v-row>
+                  </v-card>
+                </v-col>
+              </div>
+            </v-row>
+          
+          
+        
+      
       <v-row>
         <nav class="pagination" role="navegation" aria-label="pagination">
           <v-col>
@@ -143,7 +153,7 @@ import axios from 'axios';
                 name: response.data.name,
                 img: response.data.sprites.front_default,
                 id:response.data.id,
-                type:response.data.types
+                type:response.data.types[0].type.name
               };
             console.log("tipo");
             console.log(response.data.types.slot);
@@ -210,16 +220,12 @@ import axios from 'axios';
   
  
   .carta{
-    width: 300px;
+    width: 200px;
+    max-width: 100%;
     text-align: center;
 
     } 
-  .f-w{
-    width: 100%;
-    
-    display: flex;
-    justify-content: center;
-  } 
+  
 
   .titulo{
     text-align: center;
