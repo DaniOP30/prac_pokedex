@@ -91,6 +91,7 @@ import axios from 'axios';
   .pointer{
     cursor: pointer;
     height:100%;
+    
   }
   
  
