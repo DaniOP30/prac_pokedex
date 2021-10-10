@@ -13,14 +13,19 @@
                 :src="data.img"
                 
               ></v-img>
-          
-              <v-card-title>
-                {{data.name}}
-              </v-card-title>
+              
+                <v-card-title class="justify-center">
+
+                  {{data.name}}
+                  
+                </v-card-title>
+                  
+                <v-card-subtitle>
+                  #{{data.id}}
+                </v-card-subtitle>
                 
-              <v-card-subtitle>
-                #{{data.id}}
-              </v-card-subtitle>
+              
+              
           
               
             </v-card>
@@ -97,8 +102,8 @@ import axios from 'axios';
  
   .carta{
     width: 300px;
-    
-    
+    text-align: center;
+
     } 
   .f-w{
     width: 100%;
@@ -106,5 +111,10 @@ import axios from 'axios';
     display: flex;
     justify-content: center;
   } 
+
+  .titulo{
+    text-align: center;
+  }
+  
     
 </style>
