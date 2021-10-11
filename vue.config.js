@@ -3,5 +3,9 @@ module.exports = {
     'vuetify'
   ],
 
-  publicPath: '/'
+  
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/prac_pokedex/'
+      : '/'
+  
 }
