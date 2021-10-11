@@ -28,7 +28,7 @@
                         <v-row>
                             <v-col cols="12">
                                 
-                                <v-btn class="elevation-0 rounded-xl blue" style="width: 100%;">{{pokemon.type}}</v-btn>
+                                <v-btn class="elevation-0 rounded-xl white--text" style="width: 100%;" :style="{backgroundColor: changeColorType(pokemon.type)}">{{pokemon.type}}</v-btn>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -140,6 +140,23 @@ import axios from 'axios';
         
         
       },
+      // Cambio de color según el tipo
+      changeColorType(type){
+        switch (type) {
+          case 'grass': return '#03DE00';
+          case 'fire': return '#F30D0D';
+          case 'water': return '#0D80F3';
+          case 'bug': return '#026E26';
+          case 'normal': return '#F35D0D';
+          case 'electric': return '#F3D30D';
+          case 'poison': return '#A500DE';
+          case 'fairy' : return '#00DEDB ';
+          case 'ground': return '#AB4900 ';
+          case 'fighting': return '#6B2D00';
+          case 'rock ': return '#8E5328 ';
+        }
+
+      }
     }
   }
 </script>
