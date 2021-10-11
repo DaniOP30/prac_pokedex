@@ -14,7 +14,7 @@
                     <div class="container2">
                         <v-row>
                             <v-col cols="12">
-                                <v-btn>{{pokemon.type}}</v-btn>
+                                <v-btn style="width:100%">{{pokemon.type}}</v-btn>
                             </v-col>
                         </v-row>
                         <v-row>
@@ -73,6 +73,7 @@ import axios from 'axios';
     //cuando no hay nada visible
     created(){
       this.bApi();
+      
     },
     //Cuando ya hay cosas visibles
     //funciones
@@ -80,8 +81,8 @@ import axios from 'axios';
       async bApi(){
         
         
-          
-        await axios.get(`https://pokeapi.co/api/v2/pokemon/9`)
+          const id = this.$route.params.id
+        await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
         
         .then((response)=>{
          this.pokemon = {
@@ -120,6 +121,8 @@ import axios from 'axios';
         this.r_speed=this.pokemon.speed * mx_speed; 
         
         console.log(this.pokemon);
+        
+        
       },
     }
   }
@@ -128,6 +131,9 @@ import axios from 'axios';
 
 
 <style>
+*{
+    font-family: 'Poppins', sans-serif;
+}
     .titulo{
         
         text-align: left;
@@ -137,7 +143,7 @@ import axios from 'axios';
         text-transform: uppercase;
     }
     .subtitle{
-        opacity: 0.3;
+        opacity: 0.4;
     }
     .imagen{
         height: 100%;
