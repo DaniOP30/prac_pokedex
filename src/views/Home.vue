@@ -201,7 +201,7 @@ import axios from 'axios';
               };
             console.log("tipo");
             
-            console.log(response.data.types.slot);
+            
             instancia.pokemons.push(pokemon);
             
             })
@@ -217,8 +217,9 @@ import axios from 'axios';
         this.pokemons=[];
         let instancia= this;
         let i=this.search;
-        console.log(this.search);
-        await axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
+        let j=i.toLowerCase();
+        console.log(j);
+        await axios.get(`https://pokeapi.co/api/v2/pokemon/${j}`)
           
           .then((response)=>{
             let pokemon = {
